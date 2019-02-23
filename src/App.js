@@ -1,36 +1,53 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 class App extends Component {
+  state = {
+    people: [],
+    isFavorite: false
+  };
 
-    state = {
-      people: [],
-    };
-  
-    componentDidMount() {
-      fetch(process.env.PUBLIC_URL + '/data/people.json')
-        .then(response => response.json())
-        .then(data => this.setState({ people: data }));
-    }
+  componentDidMount() {
+    fetch(process.env.PUBLIC_URL + "/data/people.json")
+      .then(response => response.json())
+      .then(data => this.setState({ people: data }));
+  }
+
+  handleToggleMode = () => {
+    this.setState({
+      isFavorite: !this.state.isFavorite
+    });
+  };
 
   render() {
-
     return (
       <div className="App">
         <table>
           <thead>
             <tr>
-              <th>Name  </th>
-              <th>Surname  </th>
-              <th>Phone number</th>
+              <th className="App-text">Name </th>
+              <th className="App-text">Surname </th>
+              <th className="App-text">Phone number</th>
             </tr>
           </thead>
           <tbody>
             {this.state.people.map(person => (
-              <tr>
-                <td>{person.name}</td>
-                <td>{person.surname}</td>
-                <td>{person.phone}</td>
+              <tr
+                style={{
+                  background: this.state.isFavorite ? "yellow" : "white"
+                }}
+              >
+                <td className="App-text">{person.name}</td>
+                <td className="App-text">{person.surname}</td>
+                <td className="App-text">{person.phone}</td>
+                <td>
+                  <button onClick={this.handleToggleMode}>
+                    Toggle favorite
+                  </button>
+                </td>
+                <td>
+                  <button>Remove contact</button>
+                </td>
               </tr>
             ))}
           </tbody>
