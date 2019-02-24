@@ -4,13 +4,14 @@ import "./App.css";
 class App extends Component {
   state = {
     people: [],
-    isFavorite: false
+    isFavorite: [],
   };
 
   componentDidMount() {
     fetch(process.env.PUBLIC_URL + "/data/people.json")
       .then(response => response.json())
-      .then(data => this.setState({ people: data }));
+      .then(data => this.setState({ people: data }))
+      .then(data => this.setState({ isFavorite: data}));
   }
 
   handleToggleMode = () => {
@@ -22,6 +23,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <div className="todoapp-wrapper">
+        <input
+          type="text"/>
+      </div>
+
         <table>
           <thead>
             <tr>
@@ -41,12 +47,12 @@ class App extends Component {
                 <td className="App-text">{person.surname}</td>
                 <td className="App-text">{person.phone}</td>
                 <td>
-                  <button onClick={this.handleToggleMode}>
+                  <button  onClick={this.handleToggleMode}>
                     Toggle favorite
                   </button>
                 </td>
                 <td>
-                  <button>Remove contact</button>
+                  <button onClick={this.removePerson}>Remove contact</button>
                 </td>
               </tr>
             ))}
