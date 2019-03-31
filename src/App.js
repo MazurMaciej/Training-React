@@ -14,11 +14,11 @@ class App extends Component {
     otherState: "some new info"
   };
 
-  switchButtonHandler = () => {
+  switchButtonHandler = (newName) => {
     this.setState({
       persons: [
+        { name: newName, age: 29 },
         { name: "Maciej", age: 29 },
-        { name: "Olimpiada", age: 29 },
         { name: "Jakubeka", age: 39 },
         { name: "Miłoszo", age: 21 },
         { name: "Mikołajow", age: 32 }
@@ -41,12 +41,12 @@ class App extends Component {
         <Person
           name={this.state.persons[2].name}
           age={this.state.persons[2].age}
-          click = {this.switchButtonHandler}
+          click = {this.switchButtonHandler.bind(this, 'Oli')}
         >
           {" "}
           I really like travel!
         </Person>
-        <button onClick={this.switchButtonHandler}>Switch Name!</button>
+        <button onClick={this.switchButtonHandler.bind(this, 'Olimpia')}>Switch Name!</button>
         <Person
           name={this.state.persons[3].name}
           age={this.state.persons[3].age}
