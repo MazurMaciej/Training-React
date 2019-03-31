@@ -41,12 +41,12 @@ class App extends Component {
         <Person
           name={this.state.persons[2].name}
           age={this.state.persons[2].age}
-          click = {this.switchButtonHandler.bind(this, 'Oli')}
+          click = {()=>{this.switchButtonHandler('Oli')}}
         >
           {" "}
           I really like travel!
         </Person>
-        <button onClick={this.switchButtonHandler.bind(this, 'Olimpia')}>Switch Name!</button>
+        <button onClick={()=>{this.switchButtonHandler('Olimpia')}}>Switch Name!</button>
         <Person
           name={this.state.persons[3].name}
           age={this.state.persons[3].age}
