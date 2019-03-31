@@ -5,7 +5,8 @@ const person = props => {
     <>
       <p>
         I'm {props.name} and i'm {props.age} year's old
-      </p>{props.children}<p />
+      </p>
+      <p>{props.children}</p>
     </>
   );
 };
