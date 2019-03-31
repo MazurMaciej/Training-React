@@ -4,6 +4,6 @@ import ReactDOM from 'react-dom';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<h1>TEST</h1>, div);
+  ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
