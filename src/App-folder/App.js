@@ -5,11 +5,11 @@ import Person from "../Person/Person";
 class App extends Component {
   state = {
     persons: [
-      { name: "Maciejto", age: 29 },
-      { name: "Olimpiada", age: 29 },
-      { name: "Jakubek", age: 39 },
-      { name: "Miłoszo", age: 21 },
-      { name: "Mikołajo", age: 32 }
+      { id:'sad1', name: "Maciejto", age: 29 },
+      { id:'sad2', name: "Olimpiada", age: 29 },
+      { id:'sad3', name: "Jakubek", age: 39 },
+      { id:'sad4', name: "Miłoszo", age: 21 },
+      { id:'sad5', name: "Mikołajo", age: 32 }
     ],
     otherState: "some new info",
     showPersons: false
@@ -55,9 +55,10 @@ class App extends Component {
         <div>
           {this.state.persons.map((person, index)=>{
             return <Person  
+            click={()=>this.deletePersonHandler(index)}
             name={person.name}
             age={person.age}
-            click={()=>this.deletePersonHandler(index)}
+            key={person.id}
             />
           })}
       </div>
