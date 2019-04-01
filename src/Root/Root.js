@@ -22,7 +22,7 @@ class Root extends Component {
         <UserInput />
         <UserOutput name='Maciej'/>
         <UserOutput name={this.state.username} password={this.state.password} />
-        <button onClick={()=>{this.switchDataHandler('Maciej')}}>Switch data</button>
+        <button onClick={this.switchDataHandler.bind(this, 'Olimpia')}>Switch data</button>
       </>
     );
   }
