@@ -1,9 +1,10 @@
 import React from 'react';
+import { AST_PropAccess } from 'terser';
 
-const UserInput = () => {
+const UserInput = (props) => {
     return (
 
-        <input type="text"></input>
+        <input type="text" onChange={props.changed} value={props.name}></input>
 
     )
 };

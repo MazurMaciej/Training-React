@@ -1,28 +1,38 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import UserInput from './../UserInput/UserInput'
-import UserOutput from './../UserOutput/UserOutput'
+import UserInput from "./../UserInput/UserInput";
+import UserOutput from "./../UserOutput/UserOutput";
 
 class Root extends Component {
-    state = {
-        username: 'Olimpiada ',
-        password: ' !Olimpia!'
-    };
+  state = {
+    username: "Olimpiada ",
+    password: " !Olimpia!"
+  };
 
-    switchDataHandler = newName => {
-        this.setState({
-            username: newName,
-            password: "!kot123",
-        });
-    };
+  switchDataHandler = () => {
+    this.setState({
+      username: 'Mikołaj',
+      password: "!kot123"
+    });
+  };
+
+  nameChangeHandler = event => {
+    this.setState({
+      username: event.target.value,
+      password: " !Olimpia!"
+    });
+  };
 
   render() {
     return (
       <>
-        <UserInput />
-        <UserOutput name='Maciej'/>
+        <UserInput changed={this.nameChangeHandler} />
+        <UserOutput name="Maciej" />
+        <UserOutput username="Jakub " />
         <UserOutput name={this.state.username} password={this.state.password} />
-        <button onClick={this.switchDataHandler.bind(this, 'Olimpia')}>Switch data</button>
+        <button onClick={this.switchDataHandler.bind(this, "Olimpia")}>
+          Switch data
+        </button>
       </>
     );
   }

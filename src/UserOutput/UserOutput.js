@@ -8,7 +8,7 @@ const UserOutput = props => {
           Dane użytkownika: 
       {props.name}{props.password}<br/>
       </p>
-      <p>
+      <p> {props.username}
         Donec et tortor vel enim egestas tempor ac sit amet magna. Suspendisse
         eget tristique tellus. Aliquam metus tellus, efficitur quis tempus quis,
         tincidunt quis sem. Curabitur quis laoreet massa, malesuada fringilla
