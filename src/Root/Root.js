@@ -7,8 +7,8 @@ class Root extends Component {
   render() {
     return (
       <>
-        <h1>Hello Maciej</h1>
         <UserInput />
+        <UserOutput name="Maciej:__"/>
         <UserOutput />
         
       </>
