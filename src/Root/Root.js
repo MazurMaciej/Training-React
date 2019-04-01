@@ -28,7 +28,7 @@ class Root extends Component {
       <>
         <UserInput changed={this.nameChangeHandler} />
         <UserOutput name="Maciej" />
-        <UserOutput username="Jakub " />
+        <UserOutput name="Jakub " />
         <UserOutput name={this.state.username} password={this.state.password} />
         <button onClick={this.switchDataHandler.bind(this, "Olimpia")}>
           Switch data
