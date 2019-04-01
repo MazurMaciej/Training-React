@@ -4,13 +4,25 @@ import UserInput from './../UserInput/UserInput'
 import UserOutput from './../UserOutput/UserOutput'
 
 class Root extends Component {
+    state = {
+        username: 'Olimpiada ',
+        password: ' !Olimpia!'
+    };
+
+    switchDataHandler = newName => {
+        this.setState({
+            username: newName,
+            password: "!kot123",
+        });
+    };
+
   render() {
     return (
       <>
         <UserInput />
-        <UserOutput name="Maciej:__"/>
-        <UserOutput />
-        
+        <UserOutput name='Maciej'/>
+        <UserOutput name={this.state.username} password={this.state.password} />
+        <button onClick={()=>{this.switchDataHandler('Maciej')}}>Switch data</button>
       </>
     );
   }
