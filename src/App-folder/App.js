@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
+
 import Person from "../Person/Person";
+import ValidationComponent from "../ValidationComponent/ValidationComponent";
 
 class App extends Component {
   state = {
@@ -12,8 +14,13 @@ class App extends Component {
       { id:'sad5', name: "Mikołajo", age: 32 }
     ],
     otherState: "some new info",
-    showPersons: false
+    showPersons: false,
+    userInput: ''
   };
+
+  inputChangeHandler = (event) => {
+    this.setState({userInput: event.target.value})
+  }
 
   deletePersonHandler = (personIndex) => {
     const persons = [...this.state.persons];
@@ -38,7 +45,6 @@ class App extends Component {
     persons[personIndex] = person;
     
     this.setState({persons: persons})
-
   };
 
   toggleOnList = () => {
@@ -80,6 +86,12 @@ class App extends Component {
           Switch Name!
         </button>
         {persons}
+
+        <ValidationComponent />
+        <input 
+        type="text"
+        onChange={this.inputChangeHandler} value={this.state.userInput}></input>
+        {console.log(this.state.userInput)}
       </div>
     );
 

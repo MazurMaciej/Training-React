@@ -1,10 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const validationComponent = () => {
-
-    return
-
+const ValidationComponent = () => {
+  return <h2>Hello Maciej</h2>;
 };
 
-
-export default validationComponent;
+export default ValidationComponent;
