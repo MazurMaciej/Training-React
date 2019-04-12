@@ -1,4 +1,4 @@
-Author: Maciej Mazur 
+Author: Maciej Mazur - 
 ## Available Scripts
 
 In the project directory, you can run:
