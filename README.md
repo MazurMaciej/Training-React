@@ -1,4 +1,4 @@
-Author theme: Maciej Mazur
+Author: Maciej Mazur
 
 
 In the project directory, you can run:
